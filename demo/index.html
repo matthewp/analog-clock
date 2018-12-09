@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<title>&lt;analog-clock&gt;</title>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 3em;
+  }
+
+  .clock {
+    justify-self: center;
+    text-align: center;
+  }
+
+  analog-clock {
+    width: 15rem;
+    height: 15rem;
+  }
+</style>
+
+<h1>Cities</h1>
+<section class="cities">
+  
+  <div class="clock">
+    <h1>Local</h1>
+    <analog-clock></analog-clock>
+  </div>
+  <div class="clock">
+    <h1>New York</h1>
+    <analog-clock offset="-0400"></analog-clock>
+  </div>
+  <div class="clock">
+    <h1>London</h1>
+    <analog-clock offset="0000"></analog-clock>
+  </div>
+</section>
+
+<h1>Static</h1>
+<section class="static">
+  <analog-clock class="clock" time="1301757851000"></analog-clock>
+</section>
+
+
+
+
+
+<script type="module" src="../clock.js"></script>
