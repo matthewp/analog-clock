@@ -6,20 +6,21 @@ template.innerHTML = /* html */ `
     }
 
     .clock {
+      --dark-color: black;
+      --light-color: white;
+
       position: relative;
-      background: #fff url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjYuNiAyMzMuOCI+PHBhdGggZD0iTTEwNS41IDIyLjdWNi40aC01LjlWNC4zYy44IDAgMS41LS4xIDIuMi0uMi43LS4xIDEuNC0uMyAyLS43LjYtLjMgMS4xLS44IDEuNS0xLjMuNC0uNi43LTEuMy44LTIuMWgyLjF2MjIuN2gtMi43ek0xMTQuMSA0LjhjLjMtMSAuOC0xLjggMS40LTIuNS42LS43IDEuNC0xLjMgMi40LTEuNy45LS40IDItLjYgMy4yLS42IDEgMCAxLjkuMSAyLjguNC45LjMgMS42LjcgMi4zIDEuMi42LjUgMS4xIDEuMiAxLjUgMiAuNC44LjYgMS43LjYgMi44IDAgMS0uMiAxLjktLjUgMi43cy0uNyAxLjUtMS4yIDIuMWMtLjUuNi0xLjEgMS4yLTEuOCAxLjYtLjcuNS0xLjMgMS0yIDEuNC0uNy40LTEuNC44LTIuMSAxLjNzLTEuMy45LTEuOSAxLjNjLS42LjUtMS4xIDEtMS41IDEuNXMtLjcgMS4yLS44IDEuOWgxMS42djIuNGgtMTQuOGMuMS0xLjMuMy0yLjUuNy0zLjQuNC0uOS44LTEuOCAxLjQtMi41czEuMi0xLjMgMi0xLjljLjctLjUgMS41LTEgMi4zLTEuNSAxLS42IDEuOC0xLjEgMi41LTEuNnMxLjMtMSAxLjgtMS41LjgtMS4xIDEuMS0xLjcuNC0xLjMuNC0yLjFjMC0uNi0uMS0xLjItLjQtMS43LS4yLS41LS41LS45LS45LTEuM3MtLjktLjYtMS40LS44Yy0uNS0uMi0xLjEtLjMtMS43LS4zLS44IDAtMS41LjItMiAuNS0uNi4zLTEgLjgtMS40IDEuMy0uNC41LS42IDEuMS0uOCAxLjhzLS4yIDEuMy0uMiAySDExNGMtLjMtMS0uMi0yLjEuMS0zLjF6TTE2Ni41IDM4LjJWMjEuOWgtNS45di0yLjJjLjggMCAxLjUtLjEgMi4yLS4yLjctLjEgMS40LS4zIDItLjcuNi0uMyAxLjEtLjggMS41LTEuMy40LS42LjctMS4zLjgtMi4xaDIuMXYyMi43aC0yLjd6TTE5OC45IDU5LjJjLjMtMSAuOC0xLjggMS40LTIuNS42LS43IDEuNC0xLjMgMi40LTEuNy45LS40IDItLjYgMy4yLS42IDEgMCAxLjkuMSAyLjguNC45LjMgMS42LjcgMi4zIDEuMi42LjUgMS4xIDEuMiAxLjUgMiAuNC44LjYgMS43LjYgMi44IDAgMS0uMiAxLjktLjUgMi43cy0uNyAxLjUtMS4yIDIuMWMtLjUuNi0xLjEgMS4yLTEuOCAxLjYtLjcuNS0xLjMgMS0yIDEuNC0uNy40LTEuNC44LTIuMSAxLjNzLTEuMy45LTEuOSAxLjNjLS42LjUtMS4xIDEtMS41IDEuNXMtLjcgMS4yLS44IDEuOWgxMS42Vjc3SDE5OGMuMS0xLjMuMy0yLjUuNy0zLjQuNC0uOS44LTEuOCAxLjQtMi41czEuMi0xLjMgMi0xLjljLjctLjUgMS41LTEgMi4zLTEuNSAxLS42IDEuOC0xLjEgMi41LTEuNnMxLjMtMSAxLjgtMS41LjgtMS4xIDEuMS0xLjcuNC0xLjMuNC0yLjFjMC0uNi0uMS0xLjItLjQtMS43LS4yLS41LS41LS45LS45LTEuM3MtLjktLjYtMS40LS44Yy0uNS0uMi0xLjEtLjMtMS43LS4zLS44IDAtMS41LjItMiAuNS0uNi4zLTEgLjgtMS40IDEuMy0uNC41LS42IDEuMS0uOCAxLjhzLS4yIDEuMy0uMiAyaC0yLjdjLS4yLTEuMS0uMS0yLjEuMi0zLjF6TTIxNy42IDExNS4xSDIxOC41Yy42IDAgMS4xLS4xIDEuNi0uMnMxLS40IDEuNC0uN2MuNC0uMy43LS43LjktMS4yLjItLjUuNC0xIC40LTEuNiAwLTEuMi0uNC0yLjEtMS4yLTIuNy0uOC0uNi0xLjctLjktMi45LS45LS43IDAtMS40LjEtMS45LjQtLjUuMy0xIC42LTEuMyAxLjEtLjQuNC0uNiAxLS44IDEuNi0uMi42LS4zIDEuMi0uMyAxLjloLTIuN2MwLTEuMS4yLTIuMS41LTNzLjgtMS43IDEuMy0yLjNjLjYtLjYgMS4zLTEuMSAyLjItMS41LjktLjQgMS45LS41IDMtLjUgMSAwIDEuOS4xIDIuNy40czEuNi42IDIuMiAxLjFjLjYuNSAxLjEgMS4xIDEuNSAxLjlzLjUgMS43LjUgMi43YzAgMS0uMyAxLjktLjkgMi43LS42LjgtMS4zIDEuNC0yLjIgMS44di4xYzEuNC4zIDIuNCAxIDMuMSAyIC43IDEgMSAyLjIgMSAzLjYgMCAxLjEtLjIgMi4xLS42IDMtLjQuOS0xIDEuNi0xLjcgMi4ycy0xLjUgMS0yLjUgMS4zLTIgLjQtMyAuNGMtMS4yIDAtMi4yLS4yLTMuMS0uNS0uOS0uMy0xLjctLjgtMi40LTEuNC0uNy0uNi0xLjItMS40LTEuNS0yLjMtLjQtLjktLjUtMi0uNS0zLjFoMi43YzAgMS41LjUgMi43IDEuMyAzLjYuOC45IDIgMS40IDMuNiAxLjQuNyAwIDEuMy0uMSAxLjktLjMuNi0uMiAxLjEtLjUgMS42LS45cy44LS44IDEuMS0xLjQuNC0xLjIuNC0xLjhjMC0uNy0uMS0xLjMtLjQtMS45cy0uNi0xLTEtMS40LS45LS43LTEuNS0uOC0xLjItLjMtMS45LS4zYy0uNiAwLTEuMSAwLTEuNi4xVjExNWMtLjEuMSAwIC4xLjEuMXpNMjE0LjIgMTczLjh2Mi40aC0zLjF2NS4zaC0yLjZ2LTUuM2gtMTB2LTIuNmwxMC4zLTE0LjhoMi4ydjE1aDMuMnptLTUuNi0xMS4xbC03LjYgMTEuMWg3LjZ2LTExLjF6TTE2My43IDE5OS40bC0xLjIgNi41LjEuMWMuNS0uNiAxLjEtMSAxLjktMS4yLjgtLjMgMS42LS40IDIuMy0uNCAxIDAgMiAuMiAyLjguNS45LjMgMS43LjggMi4zIDEuNS43LjcgMS4yIDEuNSAxLjYgMi40cy42IDIuMS42IDMuNGMwIDEtLjIgMS45LS41IDIuOC0uMy45LS44IDEuNy0xLjUgMi40cy0xLjUgMS4zLTIuNSAxLjctMi4xLjYtMy41LjZjLTEgMC0xLjktLjEtMi44LS40cy0xLjYtLjctMi4zLTEuMi0xLjItMS4yLTEuNi0yYy0uNC0uOC0uNi0xLjctLjYtMi44aDIuN2MwIC42LjIgMS4xLjQgMS42cy42LjkgMSAxLjMuOS43IDEuNS45Yy42LjIgMS4yLjMgMS45LjMuNiAwIDEuMy0uMSAxLjgtLjMuNi0uMiAxLjEtLjYgMS41LTEgLjQtLjQuOC0xIDEtMS43LjMtLjcuNC0xLjUuNC0yLjQgMC0uNy0uMS0xLjQtLjQtMi4xcy0uNi0xLjItMS0xLjYtMS0uOC0xLjYtMS4xLTEuMy0uNC0yLjEtLjRjLS45IDAtMS43LjItMi40LjYtLjcuNC0xLjMuOS0xLjggMS42bC0yLjMtLjEgMi4xLTExLjhoMTEuMnYyLjRoLTl6TTExNi40IDIxNC4xYy0uNy0uNi0xLjUtLjktMi42LS45LTEuMiAwLTIuMS4zLTIuOC44cy0xLjMgMS4zLTEuNiAyLjEtLjcgMS44LS44IDIuOGMtLjEgMS0uMiAxLjktLjMgMi44bC4xLjFjLjYtMSAxLjQtMS44IDIuNC0yLjMuOS0uNSAyLS43IDMuMy0uNyAxLjEgMCAyLjEuMiAyLjkuNi45LjQgMS42LjkgMi4yIDEuNnMxIDEuNCAxLjQgMi4zYy4zLjkuNSAxLjkuNSAyLjkgMCAuOC0uMSAxLjctLjQgMi42LS4zLjktLjcgMS43LTEuMyAyLjQtLjYuNy0xLjQgMS4zLTIuMyAxLjgtMSAuNS0yLjIuNy0zLjYuNy0xLjcgMC0zLS4zLTQuMS0xcy0xLjgtMS42LTIuNC0yLjZjLS42LTEuMS0uOS0yLjItMS4xLTMuNS0uMi0xLjMtLjMtMi41LS4zLTMuNyAwLTEuNi4xLTMuMS40LTQuNS4zLTEuNS43LTIuOCAxLjQtMy45LjYtMS4xIDEuNS0yIDIuNi0yLjcgMS4xLS43IDIuNC0xIDQtMSAxLjkgMCAzLjQuNSA0LjUgMS41czEuNyAyLjQgMS45IDQuM2gtMi43Yy0uMi0xLjEtLjYtMS45LTEuMy0yLjV6bS00LjkgNy41Yy0uNi4zLTEuMS42LTEuNSAxLjEtLjQuNS0uNyAxLS45IDEuNi0uMi42LS4zIDEuMy0uMyAycy4xIDEuNC4zIDJjLjIuNi41IDEuMi45IDEuNi40LjQuOS44IDEuNSAxLjEuNi4zIDEuMy40IDIgLjRzMS40LS4xIDItLjRjLjYtLjMgMS0uNiAxLjQtMS4xLjQtLjUuNy0xIC45LTEuNnMuMy0xLjIuMy0xLjktLjEtMS40LS4zLTJjLS4yLS42LS41LTEuMi0uOC0xLjYtLjQtLjUtLjktLjgtMS40LTEuMXMtMS4yLS40LTItLjRjLS45LS4xLTEuNS4xLTIuMS4zek02NC45IDIwMy40Yy0xIDEuNi0xLjkgMy4yLTIuNyA1LS44IDEuOC0xLjQgMy42LTEuOSA1LjVzLS44IDMuNy0uOSA1LjVoLTNjLjEtMS45LjQtMy44LjktNS42LjUtMS44IDEuMS0zLjYgMS45LTUuMnMxLjctMy4zIDIuNy00LjhjMS0xLjUgMi4xLTIuOSAzLjMtNC4xSDUzLjVWMTk3aDE0Ljd2Mi4zYy0xLjIgMS4yLTIuMyAyLjUtMy4zIDQuMXpNMTUuMiAxNjIuMWMuNC0uNy45LTEuMyAxLjUtMS44czEuMy0uOSAyLjEtMS4xYy44LS4zIDEuNi0uNCAyLjUtLjQgMS4yIDAgMi4zLjIgMy4yLjUuOS4zIDEuNi44IDIuMSAxLjNzLjkgMS4yIDEuMiAxLjljLjMuNy40IDEuNC40IDIuMSAwIDEtLjMgMi0uOCAyLjhzLTEuMyAxLjUtMi4zIDEuOWMxLjQuNCAyLjQgMS4xIDMgMi4xczEgMi4yIDEgMy42YzAgMS4xLS4yIDIuMS0uNiAyLjktLjQuOS0uOSAxLjYtMS42IDIuMnMtMS41IDEtMi40IDEuMy0xLjkuNC0yLjkuNGMtMS4xIDAtMi4xLS4xLTMtLjQtLjktLjMtMS44LS43LTIuNC0xLjNzLTEuMi0xLjMtMS42LTIuMmMtLjQtLjktLjYtMS45LS42LTMgMC0xLjMuMy0yLjUgMS0zLjVzMS43LTEuNyAyLjktMi4yYy0xLS40LTEuNy0xLTIuMy0xLjktLjYtLjktLjktMS44LS45LTIuOC0uMS0uOS4xLTEuNy41LTIuNHptMi45IDE2LjJjLjkuOCAyLjEgMS4yIDMuNSAxLjIuNyAwIDEuMy0uMSAxLjktLjMuNi0uMiAxLjEtLjUgMS41LS45cy43LS45IDEtMS40LjMtMS4xLjMtMS44YzAtLjYtLjEtMS4yLS40LTEuN3MtLjYtMS0xLTEuNC0uOS0uNy0xLjUtLjljLS42LS4yLTEuMi0uMy0xLjgtLjMtLjcgMC0xLjMuMS0xLjkuMy0uNi4yLTEuMS41LTEuNS45LS40LjQtLjguOC0xIDEuNC0uMi41LS40IDEuMS0uNCAxLjgtLjEgMS4yLjMgMi4zIDEuMyAzLjF6bS0uMy0xMmMuMi41LjUuOC45IDEuMS40LjMuOC41IDEuMy43LjUuMSAxIC4yIDEuNi4yIDEuMSAwIDItLjMgMi43LTEgLjctLjYgMS4xLTEuNSAxLjEtMi43cy0uNC0yLTEuMS0yLjZjLS43LS42LTEuNi0uOS0yLjctLjktLjUgMC0xIC4xLTEuNS4ycy0uOS40LTEuMy43Yy0uNC4zLS42LjctLjggMS4xLS4yLjQtLjMuOS0uMyAxLjUtLjIuNy0uMSAxLjIuMSAxLjd6TTQuNSAxMjUuMWMuOC42IDEuNy45IDIuOC45IDEuNyAwIDIuOS0uNyAzLjctMi4yczEuMy0zLjYgMS40LTYuNmwtLjEtLjFjLS41IDEtMS4yIDEuNy0yLjIgMi4zLS45LjYtMiAuOC0zLjEuOC0xLjIgMC0yLjItLjItMy4xLS42LS45LS40LTEuNi0uOS0yLjMtMS42LS42LS43LTEuMS0xLjUtMS40LTIuNC0uMy0uOS0uNS0yLS41LTMuMXMuMi0yLjEuNS0zYy40LS45LjktMS43IDEuNS0yLjMuNy0uNyAxLjUtMS4yIDIuNC0xLjUuOS0uNCAxLjktLjUgMy0uNXMyLjEuMiAzIC41Yy45LjMgMS44LjkgMi41IDEuNy43LjggMS4zIDEuOSAxLjcgMy4zLjQgMS40LjYgMy4yLjYgNS4zIDAgMy45LS42IDYuOS0xLjkgOS0xLjIgMi4xLTMuMiAzLjItNiAzLjItMS45IDAtMy41LS41LTQuNy0xLjRzLTItMi40LTIuMS00LjRoMi43Yy40IDEuMi45IDIuMSAxLjYgMi43em03LjItMTQuMmMtLjItLjYtLjUtMS4yLS45LTEuNnMtLjktLjktMS41LTEuMWMtLjYtLjMtMS4yLS40LTItLjRzLTEuNS4xLTIuMS40LTEgLjctMS40IDEuMmMtLjQuNS0uNiAxLjEtLjggMS43LS4yLjYtLjIgMS4zLS4yIDIgMCAuNi4xIDEuMi4zIDEuOC4yLjYuNSAxLjEuOSAxLjUuNC40LjkuOCAxLjQgMS4xczEuMS40IDEuOC40IDEuMy0uMSAxLjktLjQgMS4xLS42IDEuNS0xLjFjLjQtLjUuNy0xIC45LTEuNi4yLS42LjMtMS4yLjMtMS45LjItLjcuMS0xLjQtLjEtMnpNMTMuNiA3NlY1OS44SDcuOHYtMi4yYy44IDAgMS41LS4xIDIuMi0uMi43LS4xIDEuNC0uMyAyLS43LjYtLjMgMS4xLS44IDEuNS0xLjMuNC0uNi43LTEuMy44LTIuMWgyLjFWNzZoLTIuOHpNMjEuOSA2Mi4zYzAtLjkuMS0xLjguMy0yLjYuMi0uOS40LTEuNy43LTIuNC4zLS44LjgtMS40IDEuMy0yIC42LS42IDEuMy0xIDIuMS0xLjRzMS45LS41IDMtLjVjMS4yIDAgMi4yLjIgMyAuNXMxLjUuOCAyLjEgMS40Yy42LjYgMSAxLjIgMS4zIDIgLjMuOC42IDEuNi43IDIuNC4yLjkuMyAxLjcuMyAyLjZzLjEgMS44LjEgMi42IDAgMS43LS4xIDIuNi0uMSAxLjgtLjMgMi42Yy0uMi45LS40IDEuNy0uNyAyLjRzLS44IDEuNC0xLjMgMmMtLjYuNi0xLjIgMS0yLjEgMS40cy0xLjguNS0zIC41LTIuMi0uMi0zLS41LTEuNS0uOC0yLjEtMS40Yy0uNi0uNi0xLTEuMi0xLjMtMnMtLjYtMS42LS43LTIuNGMtLjItLjktLjMtMS43LS4zLTIuNiAwLS45LS4xLTEuOC0uMS0yLjYuMS0uOC4xLTEuNy4xLTIuNnptMi45IDUuNGMuMSAxLjEuMiAyIC41IDMgLjMuOS44IDEuNyAxLjQgMi40czEuNSAxIDIuNyAxYzEuMiAwIDItLjMgMi43LTFzMS4xLTEuNCAxLjQtMi40Yy4zLS45LjUtMS45LjUtMyAuMS0xLjEuMS0yIC4xLTIuOVY2M2MwLS43LS4xLTEuMy0uMi0ycy0uMi0xLjMtLjQtMmMtLjItLjYtLjQtMS4yLS44LTEuN3MtLjgtLjktMS4zLTEuMi0xLjItLjQtMi0uNC0xLjQuMS0yIC40Yy0uNS4zLTEgLjctMS4zIDEuMi0uNC41LS42IDEtLjggMS43LS4yLjYtLjMgMS4zLS40IDItLjEuNy0uMSAxLjMtLjIgMnYxLjhjLjEuOS4xIDEuOS4xIDIuOXoiLz48Zz48cGF0aCBkPSJNNTMuNSAzOC4yVjIxLjloLTUuOXYtMi4yYy44IDAgMS41LS4xIDIuMi0uMi43LS4xIDEuNC0uMyAyLS43LjYtLjMgMS4xLS44IDEuNS0xLjMuNC0uNi43LTEuMy44LTIuMWgyLjF2MjIuN2gtMi43ek02OS4xIDM4LjJWMjEuOWgtNS45di0yLjJjLjggMCAxLjUtLjEgMi4yLS4yLjctLjEgMS40LS4zIDItLjcuNi0uMyAxLjEtLjggMS41LTEuMy40LS42LjctMS4zLjgtMi4xaDIuMXYyMi43aC0yLjd6Ii8+PC9nPjwvc3ZnPg==) no-repeat center;
-      background-size: 88%;
       --diameter: 100%;
       --radius: 50%;
       --hand-width: 2%;
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      border: 2px solid black;
+      border: 2px solid var(--dark-color);
     }
 
     .clock.simple:after {
-      background: #000;
+      background: var(--dark-color);
       border-radius: 50%;
       content: "";
       position: absolute;
@@ -31,11 +32,33 @@ template.innerHTML = /* html */ `
       z-index: 10;
     }
 
+    .clock.dark {
+      background-color: var(--dark-color);
+      fill: white;
+      border-color: var(--light-color);
+    }
+
+    .clock.dark:after {
+      background: var(--light-color);
+    }
+
+    .clock svg {
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      top: 5%;
+      left: 5%;
+    }
+
     .hand {
-      background-color: black;
+      background-color: var(--dark-color);
       position: absolute;
       left: calc(var(--radius) - calc(var(--hand-width) / 2));
       transform-origin: 50% 100%;
+    }
+
+    .clock.dark .hand {
+      background-color: var(--light-color);
     }
 
     #hour {
@@ -63,6 +86,7 @@ template.innerHTML = /* html */ `
     }
   </style>
   <div class="clock simple">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 226.6 233.8"><path d="M105.5 22.7V6.4h-5.9V4.3c.8 0 1.5-.1 2.2-.2.7-.1 1.4-.3 2-.7.6-.3 1.1-.8 1.5-1.3.4-.6.7-1.3.8-2.1h2.1v22.7h-2.7zM114.1 4.8c.3-1 .8-1.8 1.4-2.5.6-.7 1.4-1.3 2.4-1.7.9-.4 2-.6 3.2-.6 1 0 1.9.1 2.8.4.9.3 1.6.7 2.3 1.2.6.5 1.1 1.2 1.5 2 .4.8.6 1.7.6 2.8 0 1-.2 1.9-.5 2.7s-.7 1.5-1.2 2.1c-.5.6-1.1 1.2-1.8 1.6-.7.5-1.3 1-2 1.4-.7.4-1.4.8-2.1 1.3s-1.3.9-1.9 1.3c-.6.5-1.1 1-1.5 1.5s-.7 1.2-.8 1.9h11.6v2.4h-14.8c.1-1.3.3-2.5.7-3.4.4-.9.8-1.8 1.4-2.5s1.2-1.3 2-1.9c.7-.5 1.5-1 2.3-1.5 1-.6 1.8-1.1 2.5-1.6s1.3-1 1.8-1.5.8-1.1 1.1-1.7.4-1.3.4-2.1c0-.6-.1-1.2-.4-1.7-.2-.5-.5-.9-.9-1.3s-.9-.6-1.4-.8c-.5-.2-1.1-.3-1.7-.3-.8 0-1.5.2-2 .5-.6.3-1 .8-1.4 1.3-.4.5-.6 1.1-.8 1.8s-.2 1.3-.2 2H114c-.3-1-.2-2.1.1-3.1zM166.5 38.2V21.9h-5.9v-2.2c.8 0 1.5-.1 2.2-.2.7-.1 1.4-.3 2-.7.6-.3 1.1-.8 1.5-1.3.4-.6.7-1.3.8-2.1h2.1v22.7h-2.7zM198.9 59.2c.3-1 .8-1.8 1.4-2.5.6-.7 1.4-1.3 2.4-1.7.9-.4 2-.6 3.2-.6 1 0 1.9.1 2.8.4.9.3 1.6.7 2.3 1.2.6.5 1.1 1.2 1.5 2 .4.8.6 1.7.6 2.8 0 1-.2 1.9-.5 2.7s-.7 1.5-1.2 2.1c-.5.6-1.1 1.2-1.8 1.6-.7.5-1.3 1-2 1.4-.7.4-1.4.8-2.1 1.3s-1.3.9-1.9 1.3c-.6.5-1.1 1-1.5 1.5s-.7 1.2-.8 1.9h11.6V77H198c.1-1.3.3-2.5.7-3.4.4-.9.8-1.8 1.4-2.5s1.2-1.3 2-1.9c.7-.5 1.5-1 2.3-1.5 1-.6 1.8-1.1 2.5-1.6s1.3-1 1.8-1.5.8-1.1 1.1-1.7.4-1.3.4-2.1c0-.6-.1-1.2-.4-1.7-.2-.5-.5-.9-.9-1.3s-.9-.6-1.4-.8c-.5-.2-1.1-.3-1.7-.3-.8 0-1.5.2-2 .5-.6.3-1 .8-1.4 1.3-.4.5-.6 1.1-.8 1.8s-.2 1.3-.2 2h-2.7c-.2-1.1-.1-2.1.2-3.1zM217.6 115.1H218.5c.6 0 1.1-.1 1.6-.2s1-.4 1.4-.7c.4-.3.7-.7.9-1.2.2-.5.4-1 .4-1.6 0-1.2-.4-2.1-1.2-2.7-.8-.6-1.7-.9-2.9-.9-.7 0-1.4.1-1.9.4-.5.3-1 .6-1.3 1.1-.4.4-.6 1-.8 1.6-.2.6-.3 1.2-.3 1.9h-2.7c0-1.1.2-2.1.5-3s.8-1.7 1.3-2.3c.6-.6 1.3-1.1 2.2-1.5.9-.4 1.9-.5 3-.5 1 0 1.9.1 2.7.4s1.6.6 2.2 1.1c.6.5 1.1 1.1 1.5 1.9s.5 1.7.5 2.7c0 1-.3 1.9-.9 2.7-.6.8-1.3 1.4-2.2 1.8v.1c1.4.3 2.4 1 3.1 2 .7 1 1 2.2 1 3.6 0 1.1-.2 2.1-.6 3-.4.9-1 1.6-1.7 2.2s-1.5 1-2.5 1.3-2 .4-3 .4c-1.2 0-2.2-.2-3.1-.5-.9-.3-1.7-.8-2.4-1.4-.7-.6-1.2-1.4-1.5-2.3-.4-.9-.5-2-.5-3.1h2.7c0 1.5.5 2.7 1.3 3.6.8.9 2 1.4 3.6 1.4.7 0 1.3-.1 1.9-.3.6-.2 1.1-.5 1.6-.9s.8-.8 1.1-1.4.4-1.2.4-1.8c0-.7-.1-1.3-.4-1.9s-.6-1-1-1.4-.9-.7-1.5-.8-1.2-.3-1.9-.3c-.6 0-1.1 0-1.6.1V115c-.1.1 0 .1.1.1zM214.2 173.8v2.4h-3.1v5.3h-2.6v-5.3h-10v-2.6l10.3-14.8h2.2v15h3.2zm-5.6-11.1l-7.6 11.1h7.6v-11.1zM163.7 199.4l-1.2 6.5.1.1c.5-.6 1.1-1 1.9-1.2.8-.3 1.6-.4 2.3-.4 1 0 2 .2 2.8.5.9.3 1.7.8 2.3 1.5.7.7 1.2 1.5 1.6 2.4s.6 2.1.6 3.4c0 1-.2 1.9-.5 2.8-.3.9-.8 1.7-1.5 2.4s-1.5 1.3-2.5 1.7-2.1.6-3.5.6c-1 0-1.9-.1-2.8-.4s-1.6-.7-2.3-1.2-1.2-1.2-1.6-2c-.4-.8-.6-1.7-.6-2.8h2.7c0 .6.2 1.1.4 1.6s.6.9 1 1.3.9.7 1.5.9c.6.2 1.2.3 1.9.3.6 0 1.3-.1 1.8-.3.6-.2 1.1-.6 1.5-1 .4-.4.8-1 1-1.7.3-.7.4-1.5.4-2.4 0-.7-.1-1.4-.4-2.1s-.6-1.2-1-1.6-1-.8-1.6-1.1-1.3-.4-2.1-.4c-.9 0-1.7.2-2.4.6-.7.4-1.3.9-1.8 1.6l-2.3-.1 2.1-11.8h11.2v2.4h-9zM116.4 214.1c-.7-.6-1.5-.9-2.6-.9-1.2 0-2.1.3-2.8.8s-1.3 1.3-1.6 2.1-.7 1.8-.8 2.8c-.1 1-.2 1.9-.3 2.8l.1.1c.6-1 1.4-1.8 2.4-2.3.9-.5 2-.7 3.3-.7 1.1 0 2.1.2 2.9.6.9.4 1.6.9 2.2 1.6s1 1.4 1.4 2.3c.3.9.5 1.9.5 2.9 0 .8-.1 1.7-.4 2.6-.3.9-.7 1.7-1.3 2.4-.6.7-1.4 1.3-2.3 1.8-1 .5-2.2.7-3.6.7-1.7 0-3-.3-4.1-1s-1.8-1.6-2.4-2.6c-.6-1.1-.9-2.2-1.1-3.5-.2-1.3-.3-2.5-.3-3.7 0-1.6.1-3.1.4-4.5.3-1.5.7-2.8 1.4-3.9.6-1.1 1.5-2 2.6-2.7 1.1-.7 2.4-1 4-1 1.9 0 3.4.5 4.5 1.5s1.7 2.4 1.9 4.3h-2.7c-.2-1.1-.6-1.9-1.3-2.5zm-4.9 7.5c-.6.3-1.1.6-1.5 1.1-.4.5-.7 1-.9 1.6-.2.6-.3 1.3-.3 2s.1 1.4.3 2c.2.6.5 1.2.9 1.6.4.4.9.8 1.5 1.1.6.3 1.3.4 2 .4s1.4-.1 2-.4c.6-.3 1-.6 1.4-1.1.4-.5.7-1 .9-1.6s.3-1.2.3-1.9-.1-1.4-.3-2c-.2-.6-.5-1.2-.8-1.6-.4-.5-.9-.8-1.4-1.1s-1.2-.4-2-.4c-.9-.1-1.5.1-2.1.3zM64.9 203.4c-1 1.6-1.9 3.2-2.7 5-.8 1.8-1.4 3.6-1.9 5.5s-.8 3.7-.9 5.5h-3c.1-1.9.4-3.8.9-5.6.5-1.8 1.1-3.6 1.9-5.2s1.7-3.3 2.7-4.8c1-1.5 2.1-2.9 3.3-4.1H53.5V197h14.7v2.3c-1.2 1.2-2.3 2.5-3.3 4.1zM15.2 162.1c.4-.7.9-1.3 1.5-1.8s1.3-.9 2.1-1.1c.8-.3 1.6-.4 2.5-.4 1.2 0 2.3.2 3.2.5.9.3 1.6.8 2.1 1.3s.9 1.2 1.2 1.9c.3.7.4 1.4.4 2.1 0 1-.3 2-.8 2.8s-1.3 1.5-2.3 1.9c1.4.4 2.4 1.1 3 2.1s1 2.2 1 3.6c0 1.1-.2 2.1-.6 2.9-.4.9-.9 1.6-1.6 2.2s-1.5 1-2.4 1.3-1.9.4-2.9.4c-1.1 0-2.1-.1-3-.4-.9-.3-1.8-.7-2.4-1.3s-1.2-1.3-1.6-2.2c-.4-.9-.6-1.9-.6-3 0-1.3.3-2.5 1-3.5s1.7-1.7 2.9-2.2c-1-.4-1.7-1-2.3-1.9-.6-.9-.9-1.8-.9-2.8-.1-.9.1-1.7.5-2.4zm2.9 16.2c.9.8 2.1 1.2 3.5 1.2.7 0 1.3-.1 1.9-.3.6-.2 1.1-.5 1.5-.9s.7-.9 1-1.4.3-1.1.3-1.8c0-.6-.1-1.2-.4-1.7s-.6-1-1-1.4-.9-.7-1.5-.9c-.6-.2-1.2-.3-1.8-.3-.7 0-1.3.1-1.9.3-.6.2-1.1.5-1.5.9-.4.4-.8.8-1 1.4-.2.5-.4 1.1-.4 1.8-.1 1.2.3 2.3 1.3 3.1zm-.3-12c.2.5.5.8.9 1.1.4.3.8.5 1.3.7.5.1 1 .2 1.6.2 1.1 0 2-.3 2.7-1 .7-.6 1.1-1.5 1.1-2.7s-.4-2-1.1-2.6c-.7-.6-1.6-.9-2.7-.9-.5 0-1 .1-1.5.2s-.9.4-1.3.7c-.4.3-.6.7-.8 1.1-.2.4-.3.9-.3 1.5-.2.7-.1 1.2.1 1.7zM4.5 125.1c.8.6 1.7.9 2.8.9 1.7 0 2.9-.7 3.7-2.2s1.3-3.6 1.4-6.6l-.1-.1c-.5 1-1.2 1.7-2.2 2.3-.9.6-2 .8-3.1.8-1.2 0-2.2-.2-3.1-.6-.9-.4-1.6-.9-2.3-1.6-.6-.7-1.1-1.5-1.4-2.4-.3-.9-.5-2-.5-3.1s.2-2.1.5-3c.4-.9.9-1.7 1.5-2.3.7-.7 1.5-1.2 2.4-1.5.9-.4 1.9-.5 3-.5s2.1.2 3 .5c.9.3 1.8.9 2.5 1.7.7.8 1.3 1.9 1.7 3.3.4 1.4.6 3.2.6 5.3 0 3.9-.6 6.9-1.9 9-1.2 2.1-3.2 3.2-6 3.2-1.9 0-3.5-.5-4.7-1.4s-2-2.4-2.1-4.4h2.7c.4 1.2.9 2.1 1.6 2.7zm7.2-14.2c-.2-.6-.5-1.2-.9-1.6s-.9-.9-1.5-1.1c-.6-.3-1.2-.4-2-.4s-1.5.1-2.1.4-1 .7-1.4 1.2c-.4.5-.6 1.1-.8 1.7-.2.6-.2 1.3-.2 2 0 .6.1 1.2.3 1.8.2.6.5 1.1.9 1.5.4.4.9.8 1.4 1.1s1.1.4 1.8.4 1.3-.1 1.9-.4 1.1-.6 1.5-1.1c.4-.5.7-1 .9-1.6.2-.6.3-1.2.3-1.9.2-.7.1-1.4-.1-2zM13.6 76V59.8H7.8v-2.2c.8 0 1.5-.1 2.2-.2.7-.1 1.4-.3 2-.7.6-.3 1.1-.8 1.5-1.3.4-.6.7-1.3.8-2.1h2.1V76h-2.8zM21.9 62.3c0-.9.1-1.8.3-2.6.2-.9.4-1.7.7-2.4.3-.8.8-1.4 1.3-2 .6-.6 1.3-1 2.1-1.4s1.9-.5 3-.5c1.2 0 2.2.2 3 .5s1.5.8 2.1 1.4c.6.6 1 1.2 1.3 2 .3.8.6 1.6.7 2.4.2.9.3 1.7.3 2.6s.1 1.8.1 2.6 0 1.7-.1 2.6-.1 1.8-.3 2.6c-.2.9-.4 1.7-.7 2.4s-.8 1.4-1.3 2c-.6.6-1.2 1-2.1 1.4s-1.8.5-3 .5-2.2-.2-3-.5-1.5-.8-2.1-1.4c-.6-.6-1-1.2-1.3-2s-.6-1.6-.7-2.4c-.2-.9-.3-1.7-.3-2.6 0-.9-.1-1.8-.1-2.6.1-.8.1-1.7.1-2.6zm2.9 5.4c.1 1.1.2 2 .5 3 .3.9.8 1.7 1.4 2.4s1.5 1 2.7 1c1.2 0 2-.3 2.7-1s1.1-1.4 1.4-2.4c.3-.9.5-1.9.5-3 .1-1.1.1-2 .1-2.9V63c0-.7-.1-1.3-.2-2s-.2-1.3-.4-2c-.2-.6-.4-1.2-.8-1.7s-.8-.9-1.3-1.2-1.2-.4-2-.4-1.4.1-2 .4c-.5.3-1 .7-1.3 1.2-.4.5-.6 1-.8 1.7-.2.6-.3 1.3-.4 2-.1.7-.1 1.3-.2 2v1.8c.1.9.1 1.9.1 2.9z"/><g><path d="M53.5 38.2V21.9h-5.9v-2.2c.8 0 1.5-.1 2.2-.2.7-.1 1.4-.3 2-.7.6-.3 1.1-.8 1.5-1.3.4-.6.7-1.3.8-2.1h2.1v22.7h-2.7zM69.1 38.2V21.9h-5.9v-2.2c.8 0 1.5-.1 2.2-.2.7-.1 1.4-.3 2-.7.6-.3 1.1-.8 1.5-1.3.4-.6.7-1.3.8-2.1h2.1v22.7h-2.7z"/></g></svg>
     <div id="hour" class="hand"></div>
     <div id="minute" class="hand"></div>
     <div id="second" class="hand"></div>
@@ -137,6 +161,10 @@ class Clock {
     }
   }
 
+  setClockNodeMode(dark) {
+    this.clockNode.classList[dark ? 'add' : 'remove']('dark');
+  }
+
   /* State update functions */
   setHour(value) {
     this.hour = value;
@@ -161,6 +189,10 @@ class Clock {
   setOffset(value) {
     this.offset = Number(value);
     this.updateTime(Date.now());
+  }
+
+  setDark(value) {
+    this.setClockNodeMode(value);
   }
 
   /* State logic */
@@ -230,6 +262,7 @@ class Clock {
   update(data = {}) {
     if(data.time) this.setExplicitTime(data.time);
     if(data.offset != null) this.setOffset(data.offset);
+    if(data.dark != null) this.setDark(data.dark);
     if(data.stop) this.stop();
     if(data.start) this.start();
     return this.frag;
@@ -240,7 +273,7 @@ const view = Symbol('clock.view');
 
 class ClockElement extends HTMLElement {
   static get observedAttributes() {
-    return ['offset', 'time'];
+    return ['dark', 'offset', 'time'];
   }
 
   constructor() {
@@ -253,7 +286,8 @@ class ClockElement extends HTMLElement {
     this[view].connect();
     let frag = this[view].update({
       offset: this.offset,
-      time: this.time
+      time: this.time,
+      dark: this.dark
     });
     this.shadowRoot.appendChild(frag);
   }
@@ -282,6 +316,16 @@ class ClockElement extends HTMLElement {
   set offset(offset) {
     this._offset = offset;
     this[view].update({ offset });
+  }
+
+  get dark() {
+    return this._dark || false;
+  }
+
+  set dark(val) {
+    let dark = typeof val === 'boolean' ? val : val === '';
+    this._dark = dark;
+    this[view].update({ dark });
   }
 
   stop() {
