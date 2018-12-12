@@ -93,23 +93,48 @@ class Clock {
     this.rafId;
 
     this.onNewFrame = this.onNewFrame.bind(this);
+    this.setClockNodeMounted = this.setClockNodeMounted.bind(this);
   }
 
   /* DOM update functions */
   setHourNode(value) {
-    this.hourNode.style.transform = `rotate(${Math.floor(value)}deg)`;
+    if(value === 0) {
+      this.clockNode.classList.remove('mounted');
+      this.hourNode.style.transform = `rotateZ(${value}deg)`;
+      this.setMountedOnNextFrame();
+    } else {
+      this.hourNode.style.transform = `rotateZ(${value}deg)`;
+    }
   }
 
   setMinuteNode(value) {
-    this.minuteNode.style.transform = `rotate(${Math.floor(value)}deg)`;
+    if(value === 0) {
+      this.clockNode.classList.remove('mounted');
+      this.minuteNode.style.transform = `rotateZ(${value}deg)`;
+      this.setMountedOnNextFrame();
+    } else {
+      this.minuteNode.style.transform = `rotateZ(${value}deg)`;
+    }
   }
 
   setSecondNode(value) {
-    this.secondNode.style.transform = `rotate(${Math.floor(value)}deg)`;
+    if(value === 0) {
+      this.clockNode.classList.remove('mounted');
+      this.secondNode.style.transform = `rotateZ(${value}deg)`;
+      this.setMountedOnNextFrame();
+    } else {
+      this.secondNode.style.transform = `rotateZ(${value}deg)`;
+    }
   }
 
   setClockNode(value) {
     this.clockNode.classList.add(value);
+  }
+
+  setClockNodeMounted() {
+    if(!this.clockNode.classList.contains('mounted')) {
+      this.setClockNode('mounted');
+    }
   }
 
   /* State update functions */
@@ -130,7 +155,7 @@ class Clock {
 
   setMounted(value) {
     this.mounted = value;
-    this.setClockNode('mounted');
+    this.setClockNodeMounted();
   }
 
   setOffset(value) {
@@ -164,26 +189,38 @@ class Clock {
   }
 
   setExplicitTime(time) {
-    cancelAnimationFrame(this.rafId);
+    this.stop();
     this.updateTime(Number(time));
   }
 
   getDegree(value, max) {
     let fraction = value / max;
-    return 360 * fraction;
+    return Math.floor(360 * fraction);
+  }
+
+  setMountedOnNextFrame() {
+    requestAnimationFrame(this.setClockNodeMounted);
+  }
+  
+  start() {
+    this.rafId = requestAnimationFrame(this.onNewFrame);
+  }
+
+  stop() {
+    cancelAnimationFrame(this.rafId);
   }
 
   /* Event listeners */
   onNewFrame() {
     this.setTime();
-    requestAnimationFrame(this.onNewFrame);
+    this.start();
   }
 
     /* Init functionality */
   connect() {
     this.setTime();
     this.setMounted(true);
-    this.rafId = requestAnimationFrame(this.onNewFrame);
+    this.start();
   }
   
   disconnect() {
@@ -193,6 +230,8 @@ class Clock {
   update(data = {}) {
     if(data.time) this.setExplicitTime(data.time);
     if(data.offset != null) this.setOffset(data.offset);
+    if(data.stop) this.stop();
+    if(data.start) this.start();
     return this.frag;
   }
 }
@@ -243,5 +282,13 @@ customElements.define('analog-clock', class extends HTMLElement {
   set offset(offset) {
     this._offset = offset;
     this[view].update({ offset });
+  }
+
+  stop() {
+    this[view].update({ stop: true });
+  }
+
+  start() {
+    this[view].update({ start: true });
   }
 });
