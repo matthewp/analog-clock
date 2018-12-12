@@ -238,7 +238,7 @@ class Clock {
 
 const view = Symbol('clock.view');
 
-customElements.define('analog-clock', class extends HTMLElement {
+class ClockElement extends HTMLElement {
   static get observedAttributes() {
     return ['offset', 'time'];
   }
@@ -291,4 +291,11 @@ customElements.define('analog-clock', class extends HTMLElement {
   start() {
     this[view].update({ start: true });
   }
-});
+}
+
+customElements.define('analog-clock', ClockElement);
+
+export {
+  ClockElement as default,
+  ClockElement as AnalogClock
+};
