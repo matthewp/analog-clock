@@ -55,6 +55,7 @@ template.innerHTML = /* html */ `
       position: absolute;
       left: calc(var(--radius) - calc(var(--hand-width) / 2));
       transform-origin: 50% 100%;
+      transform: rotateZ(var(--deg));
     }
 
     .clock.dark .hand {
@@ -62,18 +63,21 @@ template.innerHTML = /* html */ `
     }
 
     #hour {
+      --deg: 0;
       top: 30%;
       height: 20%;
       width: 2.5%;
     }
 
     #minute {
+      --deg: 0;
       top: 10%;
       height: 40%;
       width: 2%;
     }
 
     #second {
+      --deg: 0;
       top: 14%;
       height: 45%;
       width: 1%;
@@ -124,30 +128,30 @@ class Clock {
   setHourNode(value) {
     if(value === 0) {
       this.clockNode.classList.remove('mounted');
-      this.hourNode.style.transform = `rotateZ(${value}deg)`;
+      this.hourNode.style.setProperty('--deg', value + 'deg');
       this.setMountedOnNextFrame();
     } else {
-      this.hourNode.style.transform = `rotateZ(${value}deg)`;
+      this.hourNode.style.setProperty('--deg', value + 'deg');
     }
   }
 
   setMinuteNode(value) {
     if(value === 0) {
       this.clockNode.classList.remove('mounted');
-      this.minuteNode.style.transform = `rotateZ(${value}deg)`;
+      this.minuteNode.style.setProperty('--deg', value + 'deg');
       this.setMountedOnNextFrame();
     } else {
-      this.minuteNode.style.transform = `rotateZ(${value}deg)`;
+      this.minuteNode.style.setProperty('--deg', value + 'deg');
     }
   }
 
   setSecondNode(value) {
     if(value === 0) {
       this.clockNode.classList.remove('mounted');
-      this.secondNode.style.transform = `rotateZ(${value}deg)`;
+      this.secondNode.style.setProperty('--deg', value + 'deg');
       this.setMountedOnNextFrame();
     } else {
-      this.secondNode.style.transform = `rotateZ(${value}deg)`;
+      this.secondNode.style.setProperty('--deg', value + 'deg');
     }
   }
 
